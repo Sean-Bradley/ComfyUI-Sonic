@@ -46,7 +46,7 @@ Download `config.json`, `model.safetensors` and `preprocessor_config.json` from 
 
 ## Sample Workflows
 
-Download this <a href="../wav/example.mp3" download style="white-space: nowrap">Example Audio</a> and save into you `ComfyUI/input` folder.
+Download this <a href="docs/example.mp3" download style="white-space: nowrap">Example Audio</a> and save into you `ComfyUI/input` folder.
 
 | Initial Image                                                     | Workflow                                                        |
 | ----------------------------------------------------------------- | --------------------------------------------------------------- |
