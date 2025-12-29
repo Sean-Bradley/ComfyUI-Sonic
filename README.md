@@ -1,7 +1,61 @@
 # ComfyUI Sonic
 
-> This is a fork of https://github.com/smthemex/ComfyUI_Sonic
+> Note : This is a modified fork of https://github.com/smthemex/ComfyUI_Sonic
 
 [Sonic](https://github.com/jixiaozhong/Sonic) is a method about ' Shifting Focus to Global Audio Perception in Portrait Animation',you can use it in comfyUI
 
-For setup instructions visit [https://sbcode.net/genai/lipsync-sonic/](https://sbcode.net/genai/lipsync-sonic/)
+## Install `ComfyUI Sonic` Custom Node
+
+Install the custom node `ComfyUI Sonic` using the manager, or you can use your command/terminal prompt.
+
+1. Navigate to your `./ComfyUI_windows_portable/ComfyUI/custom_nodes` folder.
+2. Run,
+   ```bash
+   git clone https://github.com/Sean-Bradley/ComfyUI-Sonic
+   ```
+3. Navigate to your `./ComfyUI_windows_portable` folder.
+4. Run
+   ```
+   python_embeded\python -m pip install -r ComfyUI/custom_nodes/ComfyUI-Sonic/requirements.txt
+   ```
+5. Restart ComfyUI
+
+## Install Models
+
+We need to create this folder structure and download each model into its place.
+
+```text
+📂 ComfyUI/
+├── 📂 models/
+│   └── 📂 sonic/
+│       ├── audio2bucket.pth
+│       ├── audio2token.pth
+│       ├── unet.pth
+│       ├── yoloface_v5m.pt
+│       ├── 📂 whisper-tiny/
+│       │   ├── config.json
+│       │   ├── model.safetensors
+│       │   └── preprocessor_config.json
+│       └── 📂 RIFE/
+│           └── flownet.pkl
+```
+
+Download `audio2bucket.pth`,`audio2token.pth`, `unet.pth`, `yoloface_v5m.pt` and `flownet.pkl` from [https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W](https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W){target=\_blank}
+
+Download `config.json`, `model.safetensors` and `preprocessor_config.json` from [https://huggingface.co/openai/whisper-tiny/tree/main](https://huggingface.co/openai/whisper-tiny/tree/main){target=\_blank}
+
+## Sample Workflows
+
+Download this <a href="../wav/example.mp3" download style="white-space: nowrap">Example Audio</a> and save into you `ComfyUI/input` folder.
+
+| Initial Image                                                     | Workflow                                                        |
+| ----------------------------------------------------------------- | --------------------------------------------------------------- |
+| <img src="docs/sonic-1.png" style="max-height:250px"/>            | ![](docs/sonic-1-workflow.png)                                  |
+| <img src="docs/sonic-2.png" style="max-height:250px"/>            | ![](docs/sonic-2-workflow.png)                                  |
+| <img src="docs/girl-with-freckels.png" style="max-height:250px"/> | ![](docs/sonic-3-workflow.png)                                  |
+| <img src="docs/sonic-4.png" style="max-height:250px"/>            | ![](docs/sonic-4-workflow.png)                                  |
+| <img src="docs/ltxv-karate.png" style="max-height:250px"/>        | ![](docs/sonic-5-workflow.png)                                  |
+| <img src="docs/ComfyUI_02591_.png" style="max-height:250px"/>     | <img src="docs/sonic-6-workflow.png" style="max-height:250px"/> |
+| <img src="docs/ComfyUI_02372_.png" style="max-height:250px"/>     | <img src="docs/sonic-7-workflow.png" style="max-height:250px"/> |
+| <img src="docs/sonic-8.png" style="max-height:250px"/>            | <img src="docs/sonic-8-workflow.png" style="max-height:250px"/> |
+| <img src="docs/sonic-9.png" style="max-height:250px"/>            | <img src="docs/sonic-9-workflow.png" style="max-height:250px"/> |
