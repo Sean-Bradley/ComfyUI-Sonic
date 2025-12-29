@@ -44,6 +44,9 @@ Download `config.json`, `model.safetensors` and `preprocessor_config.json` from 
 
 ## Sample Workflows
 
+> [!TIP]
+> For easier drag/drop of workflows into ComfyUI, visit https://sbcode.net/genai/lipsync-sonic/
+
 Download this <a href="docs/example.mp3" download style="white-space: nowrap">Example Audio</a> and save into your `ComfyUI/input` folder.
 
 | Initial Image                                                     | Workflow                                                        |
