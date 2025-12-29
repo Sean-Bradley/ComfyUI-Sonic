@@ -1,7 +1,20 @@
+This repo contains a mixture of code from
+
+https://github.com/smthemex/ComfyUI_Sonic
+MIT LICENSE : https://github.com/smthemex/ComfyUI_Sonic/blob/main/LICENSE
+
+and
+
+https://github.com/jixiaozhong/Sonic
+CC BY-NC-SA 4.0 LICENSE : https://github.com/jixiaozhong/Sonic/blob/main/LICENSE
+
+My differences are licensed below.
+
+---
+
 MIT License
 
-Copyright (c) 2025 smthemex
-Modifications in https://github.com/Sean-Bradley/ComfyUI-Sonic (c) 2025 Sean Bradley
+Copyright (c) 2025 Sean Bradley
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
