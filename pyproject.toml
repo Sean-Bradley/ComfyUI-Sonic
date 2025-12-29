@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-sonic"
-description = "Sonic is a method about ' Shifting Focus to Global Audio Perception in Portrait Animation',you can use it in comfyUI."
-version = "2.0.1"
+description = "Custom node that takes an audio mp3 and an image, and creates a lip synced video from them."
+version = "2.0.2"
 license = {file = "LICENSE"}
 dependencies = ["diffusers>=0.29.0", "torch", "scipy", "torchvision", "transformers", "imageio", "imageio-ffmpeg",  "#omegaconf", "tqdm", "libros", "einops", "opencv-python"]
 

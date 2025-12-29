@@ -1,8 +1,6 @@
 # ComfyUI Sonic
 
-> Note : This is a modified fork of https://github.com/smthemex/ComfyUI_Sonic
-
-[Sonic](https://github.com/jixiaozhong/Sonic) is a method about ' Shifting Focus to Global Audio Perception in Portrait Animation',you can use it in comfyUI
+Custom node that takes an audio mp3 and an image, and creates a lip synced video from them.
 
 ## Install `ComfyUI Sonic` Custom Node
 
