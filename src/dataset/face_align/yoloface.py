@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import torch
 import torchvision
+from ultralytics import YOLO
 
 
 def xyxy2xywh(x):
@@ -214,72 +215,33 @@ class YoloFace():
     def __init__(self, pt_path='checkpoints/yolov5m-face.pt', confThreshold=0.5, nmsThreshold=0.45, device='cuda'):
         assert os.path.exists(pt_path)
 
-        self.inpSize = 416
         self.conf_thres = confThreshold
         self.iou_thres = nmsThreshold
-        self.test_device = torch.device(device if torch.cuda.is_available() else "cpu")
-        self.model = torch.jit.load(pt_path).to(self.test_device)
-        self.last_w = 416
-        self.last_h = 416
-        self.grids = None
+        self.test_device = device
+        self.model = YOLO(pt_path)
 
     @torch.no_grad()
     def detect(self, srcimg):
-        # t0=time.time()
-
-        h0, w0 = srcimg.shape[:2]  # orig hw
-        r = self.inpSize / min(h0, w0)  # resize image to img_size
-        h1 = int(h0*r+31)//32*32
-        w1 = int(w0*r+31)//32*32
-
-        img = cv2.resize(srcimg, (w1,h1), interpolation=cv2.INTER_LINEAR)
-
-        # Convert
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # BGR to RGB
-
-        # Run inference
-        img = torch.from_numpy(img).to(self.test_device).permute(2,0,1)
-        img = img.float()/255  # uint8 to fp16/32  0-1
-        if img.ndimension() == 3:
-            img = img.unsqueeze(0)
-
-        # Inference
-        if h1 != self.last_h or w1 != self.last_w or self.grids is None:
-            grids = []
-            for scale in [8,16,32]:
-                ny = h1//scale
-                nx = w1//scale
-                yv, xv = torch.meshgrid([torch.arange(ny), torch.arange(nx)])
-                grid = torch.stack((xv, yv), 2).view((1,1,ny, nx, 2)).float()
-                grids.append(grid.to(self.test_device))
-            self.grids = grids
-            self.last_w = w1
-            self.last_h = h1
-
-        pred = self.model(img, self.grids).cpu()
-
-        # Apply NMS
-        det = non_max_suppression_face(pred, self.conf_thres, self.iou_thres)[0]
-        # Process detections
-        # det = pred[0]
-        bboxes = np.zeros((det.shape[0], 4))
-        kpss = np.zeros((det.shape[0], 5, 2))
-        scores = np.zeros((det.shape[0]))
-        # gn = torch.tensor([w0, h0, w0, h0]).to(pred)  # normalization gain whwh
-        # gn_lks = torch.tensor([w0, h0, w0, h0, w0, h0, w0, h0, w0, h0]).to(pred)  # normalization gain landmarks
-        det = det.cpu().numpy()
-
-        for j in range(det.shape[0]):
-            # xywh = (xyxy2xywh(det[j, :4].view(1, 4)) / gn).view(4).cpu().numpy()
-            bboxes[j, 0] = det[j, 0] * w0/w1
-            bboxes[j, 1] = det[j, 1] * h0/h1
-            bboxes[j, 2] = det[j, 2] * w0/w1 - bboxes[j, 0]
-            bboxes[j, 3] = det[j, 3] * h0/h1 - bboxes[j, 1]
-            scores[j] = det[j, 4]
-            # landmarks = (det[j, 5:15].view(1, 10) / gn_lks).view(5,2).cpu().numpy()
-            kpss[j, :, :] = det[j, 5:15].reshape(5, 2) * np.array([[w0/w1,h0/h1]])
-                # class_num = det[j, 15].cpu().numpy()
-                # orgimg = show_results(orgimg, xywh, conf, landmarks, class_num)
+        results = self.model.predict(srcimg, conf=self.conf_thres, iou=self.iou_thres, device=self.test_device, verbose=False)
+        if results and len(results) > 0:
+            result = results[0]
+            boxes_xyxy = result.boxes.xyxy.cpu().numpy()
+            scores = result.boxes.conf.cpu().numpy()
+            if result.keypoints is not None:
+                keypoints = result.keypoints.xy.cpu().numpy()
+            else:
+                keypoints = np.zeros((len(scores), 5, 2))
+            # convert to expected format [x1, y1, w, h]
+            bboxes = np.zeros((len(scores), 4))
+            bboxes[:, 0] = boxes_xyxy[:, 0]  # x1
+            bboxes[:, 1] = boxes_xyxy[:, 1]  # y1
+            bboxes[:, 2] = boxes_xyxy[:, 2] - boxes_xyxy[:, 0]  # w
+            bboxes[:, 3] = boxes_xyxy[:, 3] - boxes_xyxy[:, 1]  # h
+            kpss = keypoints
+        else:
+            bboxes = np.zeros((0, 4))
+            kpss = np.zeros((0, 5, 2))
+            scores = np.zeros(0)
         return bboxes, kpss, scores
 
 
@@ -289,7 +251,7 @@ if __name__ == '__main__':
 
     imgpath = 'test.png'
 
-    yoloface = YoloFace(pt_path='../checkpoints/yoloface_v5m.pt')
+    yoloface = YoloFace(pt_path='../checkpoints/face_yolov8m.pt')
     srcimg = cv2.imread(imgpath)
 
     #warpup

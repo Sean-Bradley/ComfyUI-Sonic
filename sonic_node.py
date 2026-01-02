@@ -134,7 +134,7 @@ class SONIC_PreData:
 
         audio2token_ckpt = os.path.join(SONIC_weigths_path, "audio2token.pth")
         audio2bucket_ckpt = os.path.join(SONIC_weigths_path, "audio2bucket.pth")
-        yolo_ckpt = os.path.join(SONIC_weigths_path, "yoloface_v5m.pt")
+        yolo_ckpt = os.path.join(SONIC_weigths_path, "face_yolov8m.pt")
 
         if not os.path.exists(audio2bucket_ckpt) or not os.path.exists(audio2token_ckpt) or not os.path.exists(
                 yolo_ckpt):

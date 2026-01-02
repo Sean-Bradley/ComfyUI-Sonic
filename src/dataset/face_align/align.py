@@ -6,7 +6,7 @@ import torch
 from .yoloface import YoloFace
 
 class AlignImage(object):
-    def __init__(self, device='cuda', det_path='checkpoints/yoloface_v5m.pt'):
+    def __init__(self, device='cuda', det_path='checkpoints/face_yolov8m.pt'):
         self.facedet = YoloFace(pt_path=det_path, confThreshold=0.5, nmsThreshold=0.45, device=device)
 
     @torch.no_grad()

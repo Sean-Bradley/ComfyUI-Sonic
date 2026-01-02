@@ -29,7 +29,7 @@ We need to create this folder structure and download each model into its place.
 │       ├── audio2bucket.pth
 │       ├── audio2token.pth
 │       ├── unet.pth
-│       ├── yoloface_v5m.pt
+│       ├── face_yolov8m.pt
 │       ├── 📂 whisper-tiny/
 │       │   ├── config.json
 │       │   ├── model.safetensors
@@ -38,9 +38,26 @@ We need to create this folder structure and download each model into its place.
 │           └── flownet.pkl
 ```
 
-Download `audio2bucket.pth`,`audio2token.pth`, `unet.pth`, `yoloface_v5m.pt` and `flownet.pkl` from [https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W](https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W){target=\_blank}
+Download each file and place into your `./ComfyUI/models/sonic/` folder
 
-Download `config.json`, `model.safetensors` and `preprocessor_config.json` from [https://huggingface.co/openai/whisper-tiny/tree/main](https://huggingface.co/openai/whisper-tiny/tree/main){target=\_blank}
+- [audio2bucket.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
+- [audio2token.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
+- [unet.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
+- [face_yolov8m.pt](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
+
+Download each file and place into your `./ComfyUI/models/sonic/whisper-tiny/` folder
+
+[config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
+[model.safetensors](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
+[preprocessor_config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
+
+Download this file and place into your `./ComfyUI/models/sonic/RIFE/` folder
+
+[flownet.pkl](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/RIFE){target=\_blank}
+
+<!-- Download `audio2bucket.pth`,`audio2token.pth`, `unet.pth`, `yoloface_v5m.pt` and `flownet.pkl` from [https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W](https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W){target=\_blank}
+
+Download `config.json`, `model.safetensors` and `preprocessor_config.json` from [https://huggingface.co/openai/whisper-tiny/tree/main](https://huggingface.co/openai/whisper-tiny/tree/main){target=\_blank} -->
 
 ## Sample Workflows
 

@@ -10,3 +10,4 @@ omegaconf
 tqdm
 librosa
 einops
+ultralytics
