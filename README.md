@@ -6,7 +6,7 @@ Custom node that takes an audio mp3 and an image, and creates a lip synced video
 
 Install the custom node `ComfyUI Sonic` using the manager,
 
-![alt text](./docs/{BD3DB8BD-8B50-47B1-B352-4899C5D0163D}.png)
+![ComfyUI Manager Sonic](./docs/{BD3DB8BD-8B50-47B1-B352-4899C5D0163D}.png)
 
 Or, you can use your command/terminal prompt.
 
