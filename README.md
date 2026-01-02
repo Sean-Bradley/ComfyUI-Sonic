@@ -40,20 +40,20 @@ We need to create this folder structure and download each model into its place.
 
 Download each file and place into your `./ComfyUI/models/sonic/` folder
 
-- [audio2bucket.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
-- [audio2token.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
-- [unet.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
-- [face_yolov8m.pt](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic){target=\_blank}
+- [audio2bucket.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic)
+- [audio2token.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic)
+- [unet.pth](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic)
+- [face_yolov8m.pt](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic)
 
 Download each file and place into your `./ComfyUI/models/sonic/whisper-tiny/` folder
 
-[config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
-[model.safetensors](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
-[preprocessor_config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny){target=\_blank}
+- [config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny)
+- [model.safetensors](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny)
+- [preprocessor_config.json](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/whisper-tiny)
 
 Download this file and place into your `./ComfyUI/models/sonic/RIFE/` folder
 
-[flownet.pkl](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/RIFE){target=\_blank}
+- [flownet.pkl](https://huggingface.co/Sean-Bradley/ComfyUI/tree/main/models/sonic/RIFE)
 
 <!-- Download `audio2bucket.pth`,`audio2token.pth`, `unet.pth`, `yoloface_v5m.pt` and `flownet.pkl` from [https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W](https://drive.google.com/drive/folders/1oe8VTPUy0-MHHW2a_NJ1F8xL-0VN5G7W){target=\_blank}
 
