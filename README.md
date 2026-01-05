@@ -18,7 +18,7 @@ Or, you can use your command/terminal prompt.
 3. Navigate to your `./ComfyUI_windows_portable` folder.
 4. Run
    ```
-   python_embeded\python -m pip install -r ComfyUI/custom_nodes/ComfyUI-Sonic/requirements.txt
+   python_embeded\python -m pip install -r ComfyUI/custom_nodes/comfyui-sonic/requirements.txt
    ```
 5. Restart ComfyUI
 
