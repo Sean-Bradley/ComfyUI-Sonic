@@ -3,7 +3,7 @@ name = "comfyui-sonic"
 description = "Custom node that takes an audio mp3 and an image, and creates a lip synced video from them."
 version = "3.1.0"
 license = {file = "LICENSE"}
-dependencies = ["diffusers>=0.29.0", "torch", "scipy", "torchvision", "transformers", "imageio", "tqdm", "libros", "einops", "opencv-python", "ultralytics", "omegaconf"]
+dependencies = ["diffusers>=0.29.0", "torch", "scipy", "torchvision", "transformers", "imageio", "tqdm", "libros", "einops", "opencv-python", "ultralytics", "omegaconf>=2.3.0"]
 
 [project.urls]
 Repository = "https://github.com/Sean-Bradley/ComfyUI-Sonic"

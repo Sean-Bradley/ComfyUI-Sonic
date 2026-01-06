@@ -9,4 +9,4 @@ tqdm
 librosa
 einops
 ultralytics
-omegaconf
+omegaconf>=2.3.0
