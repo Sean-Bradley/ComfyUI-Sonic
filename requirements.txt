@@ -9,3 +9,4 @@ tqdm
 librosa
 einops
 ultralytics
+omegaconf
